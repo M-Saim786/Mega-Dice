@@ -632,34 +632,46 @@ function Landingpage() {
 
             {/*  ------------------ recomm section ------------- */}
             <Box sx={{ my: 10, padding: "20px" }}>
-                <Grid container alignItems="center" spacing={2}>
-                    <Grid item xs={12} sm={3}>
-                        <Typography variant="h6" align="center">
-                            Recommended By
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={1}>
-                        <div style={{ height: "10vh", backgroundColor: "white", width: "2px", margin: "0 10px" }}>
-                            {/* Divider */}
-                        </div>
-                    </Grid>
-                    <Grid item xs={6} sm={2}>
-                        <Box display="flex" justifyContent="center">
-                            <img src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fbitcoinist-logo.png&w=256&q=75" alt="Bitcoinist" style={{ maxWidth: "100%", height: "auto" }} />
-                        </Box>
-                    </Grid>
-                    <Grid item xs={6} sm={2}>
-                        <Box display="flex" justifyContent="center">
-                            <img src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fcryptonews-logo.png&w=256&q=75" alt="Crypto News" style={{ maxWidth: "100%", height: "auto" }} />
-                        </Box>
-                    </Grid>
-                    <Grid item xs={6} sm={2}>
-                        <Box display="flex" justifyContent="center">
-                            <img src="https://www.megadicetoken.com/assets/images/be-in-crypto-logo.svg" alt="Be In Crypto" style={{ maxWidth: "100%", height: "auto" }} />
-                        </Box>
-                    </Grid>
-                </Grid>
-            </Box>
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} sm={3}>
+          <Typography variant="h6" align="center">
+            Recommended By
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={1}>
+          <div style={{ height: "10vh", backgroundColor: "white", width: "2px", margin: "0 10px" }}>
+            {/* Divider */}
+          </div>
+        </Grid>
+        <Grid item xs={6} sm={2}>
+          <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
+            <img
+              src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fbitcoinist-logo.png&w=256&q=75"
+              alt="Bitcoinist"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          </Box>
+        </Grid>
+        <Grid item xs={6} sm={2}>
+          <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
+            <img
+              src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fcryptonews-logo.png&w=256&q=75"
+              alt="Crypto News"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          </Box>
+        </Grid>
+        <Grid item xs={6} sm={2}>
+          <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
+            <img
+              src="https://www.megadicetoken.com/assets/images/be-in-crypto-logo.svg"
+              alt="Be In Crypto"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
 
             {/* ------------ Air Drop Sec------------ */}
             <Box sx={{ padding: "20px" }}>
