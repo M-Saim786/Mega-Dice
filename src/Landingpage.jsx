@@ -613,10 +613,10 @@ function Landingpage() {
 
             {/* --------------- OUR tOKENOSM */}
 
-            <Box>
+            <Box padding="10px" my={4} mb={10}>
                 <Box>
-                    <Typography sx={{ fontSize: "40px" }}>
-                        OUR TOKENOMICS
+                    <Typography sx={{ fontSize: "60px", textAlign: "center" }}>
+                        <TransparentText text="OUR" /> TOKENOMICS
                     </Typography>
                 </Box>
                 <Box sx={{ display: "flex", justifyContent: "space-around" }}>
@@ -624,7 +624,7 @@ function Landingpage() {
                         <img src="https://www.megadicetoken.com/assets/images/tokenomics-chart.svg" alt="Tokenomics Chart" />
                     </Box>
                     <Box sx={{ width: "45%", backgroundColor: "#0E212F", padding: "20px", borderRadius: "10px" }}>
-                        <Typography>
+                        <Typography >
                             $DICE has total supply of 420,000,000
                         </Typography>
                         <Typography>
@@ -656,55 +656,62 @@ function Landingpage() {
 
 
             {/* ---------------- whitepaprer----------- */}
-            <Box sx={{ padding: "30px" }}>
-                <Box sx={{ display: "flex", justifyContent: "space-evenly", border: "1px solid red" }}>
-                    <Box sx={{ backgroundColor: "black", width: "50%" }}>
-                        <Box sx={{ position: 'relative', width: "100%" }}>
 
-                            <Box sx={{ position: 'absolute', top: '20px', left: '20px', zIndex: 1, }}>
+            <Box sx={{ padding: "30px" }}>
+                <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
+                    <Box sx={{ backgroundColor: "black", width: "40%" }}>
+                        <Box sx={{ position: 'relative', width: "100%" }}>
+                            <Box sx={{ position: 'absolute', top: '20px', left: '20px', zIndex: 1 }}>
                                 <Box>
                                     <img src="https://www.megadicetoken.com/assets/images/logo.svg" alt="Mega Dice Logo" style={{ width: "50%", height: "auto" }} />
                                 </Box>
-                                {/* <Box>
-                                <img src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fdices.png&w=256&q=75" alt="Mega Dice Logo" style={{ width: "50%", height: "auto" }} />
-
-                                </Box> */}
                             </Box>
                             {/* Main image */}
-                            <Box sx={{}}>
-                                <img src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fplaying-cards.png&w=1920&q=75" alt="Playing Cards" style={{ width: "100%" }} />
+                            <Box>
+                                <img src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fplaying-cards.png&w=1920&q=75" alt="Playing Cards" style={{ width: "90%" }} />
                             </Box>
                             {/* Overlay text */}
                             <Box
                                 sx={{
                                     position: 'absolute',
                                     top: '50%',
-                                    left: '50%',
-                                    transform: 'translate(-50%, -50%)',
-                                    textAlign: 'center',
+                                    left: '10%',
+                                    transform: 'translateY(-50%)',
+                                    textAlign: 'left',
                                     color: '#ffffff', // Text color
                                     padding: '20px',
                                     borderRadius: '10px',
                                     maxWidth: '80%', // Adjust width as needed
-                                    zIndex: 2, // Ensure text appears above the image
+                                    zIndex: 1,
+                                    wordWrap: "break-word"
                                 }}
                             >
-                                <Typography gutterBottom>
-                                    Next Gen CASINO EXPERIENCE                                </Typography>
+                                <Typography gutterBottom fontSize={"40px"} fontWeight={"bold"}>
+                                    <TransparentText text={"Next"} />
+                                    <span style={{ color: "#0AC18E", fontSize: "40px" }}>GEN</span> <br />
+                                    CASINO <br />
+                                    <TransparentText text={"EXPERIENCE"} />
+                                </Typography>
+                            </Box>
+                            <Box sx={{ padding: "20px", position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
+                                <Typography fontSize={"20px"} fontWeight={"bold"}>
+                                    WHITEPAPER
+                                </Typography>
                             </Box>
                         </Box>
                     </Box>
-                    <Box>
+                    <Box sx={{ width: "50%" }}>
                         <Box>
-                            <Typography>
+                            <Typography fontSize={"40px"} fontWeight={"bold"}>
                                 WHITEPAPER
                             </Typography>
                         </Box>
                         <Box>
                             Want to know more about $DICE and Mega Dice Casino? Our whitepaper has everything you need to know and you can check it out by clicking below!
                         </Box>
+                        <br />
                         <Box>
-                            <button>
+                            <button style={{ backgroundColor: "#0AC18E", border: "none", padding: "10px 20px" }}>
                                 READ WHITEPAPER
                             </button>
                         </Box>
@@ -712,19 +719,17 @@ function Landingpage() {
                 </Box>
             </Box>
 
-
-
             {/* -------------- faqs ----------------- */}
             <Box sx={{ padding: "30px" }}>
                 <Box>
-                    <Typography fontSize={"50px"}>
+                    <Typography fontSize={"50px"} textAlign={"center"}>
                         FREQUENTLY  <TransparentText text={"ASKED"} /> QUESTIONS
                     </Typography>
                 </Box>
                 <Box sx={{ backgroundColor: 'transparent' }}>
 
                     <div style={{ backgroundColor: 'transparent' }}>
-                        {faqs.map((faq, i) => (<Accordion sx={{ backgroundColor: 'transparent' }} 
+                        {faqs.map((faq, i) => (<Accordion sx={{ backgroundColor: 'transparent', padding: "10px 0" }}
                         // defaultExpanded={i == 0 ? true : false}
                         >
                             <AccordionSummary
@@ -740,6 +745,83 @@ function Landingpage() {
                         </Accordion>))}
                     </div>
                 </Box>
+            </Box>
+
+
+            <Box
+                sx={{
+
+                    height: "50vh",
+                    // border: "1px solid red",
+                    // width: "100%",
+                    // display: "flex",
+                    // justifyContent: "space-between",
+                    // px: "50px",
+                    // backgroundColor: "white",
+                }}
+            >
+                <Box sx={{ backgroundColor: "#0AC18E", padding: "20px" }}>
+                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <Box sx={{ display: "flex", }}>
+
+                            <Box mx={"30px"}>
+                                <List >
+                                    <ListItem color="red !important" >
+                                        About
+                                    </ListItem>
+                                    <ListItem color="black">
+                                        How to buy
+                                    </ListItem>
+                                    <ListItem color="black">
+                                        Road map
+                                    </ListItem>
+                                    <ListItem color="black">
+                                        FAQ
+                                    </ListItem>
+                                </List>
+                            </Box>
+                            <Box>
+                                <List>
+                                    <ListItem>
+                                        Privacy Policy
+                                    </ListItem>
+                                    <ListItem>
+                                        Cookies
+                                    </ListItem>
+                                    <ListItem>
+                                        Terms & Conditions
+                                    </ListItem>
+                                </List>
+                            </Box>
+                        </Box>
+
+                        <Box>
+                            <Typography fontWeight={"bold"} sx={{ textDecoration: "underline" }}>
+                                contact@megadice.io
+                            </Typography>
+                            <Box sx={{ display: 'flex', alignItems: 'center', marginRight: "10px", mt: 2 }}>
+                                <TwitterIcon sx={{ fontSize: 20, color: '#0AC18E', marginRight: "5px", padding: "10px", border: "1px solid white", borderRadius: "50%", }} />
+                                <SendIcon sx={{ fontSize: 20, color: '#0AC18E', marginRight: "5px", padding: "10px", border: "1px solid white", borderRadius: "50%", }} />
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+
+                <Box sx={{ display: "flex", padding: "20px 50px", justifyContent: "space-between" }}>
+                    <Box sx={{ width: "30%" }}>
+                        <img src="https://www.megadicetoken.com/assets/images/logo.svg" alt="Mega Dice Logo" style={{ width: "50%" }} />
+                    </Box>
+                    <Box sx={{ textAlign: "right", width: "60%" }}>
+                        <Typography fontSize={"12px"} color="#979790">
+                            Copyright 2024 Mega Dice. All Rights Reserved.
+                        </Typography>
+                        <Typography fontSize={"12px"} color="#979790">
+                            Disclaimer: Cryptocurrency may be unregulated in your jurisdiction. The value of cryptocurrencies may go down as well as up.
+                            Profits may be subject to capital gains or other taxes applicable in your jurisdiction.
+                        </Typography>
+                    </Box>
+                </Box>
+
             </Box>
 
 
