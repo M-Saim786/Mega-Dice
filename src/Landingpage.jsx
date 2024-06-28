@@ -298,245 +298,234 @@ function Landingpage() {
             </Box>
 
 
-            <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Box sx={{ width: "35%" }}>
-                    <Typography fontWeight={"bold"} fontSize={"36px"}>
-                        THE #1 GAMEFI ON SOL
-                    </Typography>
-                    <Typography sx={{ fontSize: "50px" }}>
-                        <TransparentText text="$DICE" />
-                    </Typography>
-                    <Typography>
-                        The ultimate casino token experience. Exclusive benefits retroactively, and with every wager!
-                    </Typography>
-                    <br />
-                    <Box>
-                        <button style={{ border: "none", backgroundColor: "#0AC18E", padding: "10px 20px", width: "70%" }}>
-                            JOIN COMMUNITY
-                        </button>
-                        <br />
-                        <br />
-                        <button style={{ border: " 1px solid #0AC18E", padding: "10px 20px", width: "70%" }}>
-                            PLAY NOW (TELEGRAM)
-                        </button>
-                        <br />
-                        <br />
-                        <button style={{ border: " 1px solid #0AC18E", padding: "10px 20px", width: "70%" }}>
-                            Play Now (WEB)
-                        </button>
-                    </Box>
-
-                </Box>
-                <Box sx={{ border: "4px solid #0AC18E", padding: "20px", textAlign: "center", width: "35%" }}>
-                    <Typography my={3}>
-                        Mega Dice Presale
-                    </Typography>
-                    <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
-                        <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%" }}>
-                            <Typography sx={{ color: "black" }}>
-                                Days
-                            </Typography>
-                            <Typography sx={{ color: "white", fontSize: "40px" }}>
-                                2
-                            </Typography>
+            <Box sx={{ my: 10, padding: { xs: "10px", sm: "20px" } }}>
+                <Grid container spacing={2} alignItems="center" justifyContent="center">
+                    <Grid item xs={12} md={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <Typography variant="h5" fontWeight="bold" textAlign="center" mb={2}>
+                            THE #1 GAMEFI ON SOL
+                        </Typography>
+                        <Typography variant="h2" sx={{ fontSize: { xs: "40px", sm: "50px" }, textAlign: 'center' }} mb={2}>
+                            <TransparentText text="$DICE" />
+                        </Typography>
+                        <Typography textAlign="center" mb={2}>
+                            The ultimate casino token experience. Exclusive benefits retroactively, and with every wager!
+                        </Typography>
+                        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <Button variant="contained" style={{ backgroundColor: "#0AC18E", color: "#FFFFFF", width: "100%", maxWidth: "250px", marginBottom: "10px" }}>
+                                JOIN COMMUNITY
+                            </Button>
+                            <Button variant="outlined" style={{ borderColor: "#0AC18E", color: "#0AC18E", width: "100%", maxWidth: "250px", marginBottom: "10px" }}>
+                                PLAY NOW (TELEGRAM)
+                            </Button>
+                            <Button variant="outlined" style={{ borderColor: "#0AC18E", color: "#0AC18E", width: "100%", maxWidth: "250px" }}>
+                                Play Now (WEB)
+                            </Button>
                         </Box>
-
-                        <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%" }}>
-                            <Typography sx={{ color: "black" }}>
-                                Hours
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Box sx={{ border: "4px solid #0AC18E", padding: "20px", textAlign: "center", width: "100%" }}>
+                            <Typography variant="h6" my={3}>
+                                Mega Dice Presale
                             </Typography>
-                            <Typography sx={{ color: "white", fontSize: "40px" }}>
-                                2
-                            </Typography>
-
-                        </Box>
-
-                        <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%" }}>
-                            <Typography sx={{ color: "black" }}>
-                                Minutes
-                            </Typography>
-                            <Typography sx={{ color: "white", fontSize: "40px" }}>
-                                2
-                            </Typography>
-
-                        </Box>
-
-                        <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%" }}>
-                            <Typography sx={{ color: "black" }}>
-                                Seconds
-                            </Typography>
-                            <Typography sx={{ color: "white", fontSize: "40px" }}>
-                                2
-                            </Typography>
-
-                        </Box>
-                    </Box>
-                    <br />
-                    <Box sx={{ backgroundColor: "white", padding: "4px 0" }}>
-                        <Box sx={{ backgroundColor: "#0AC18E", width: "90%" }}>
-                            <Typography fontSize={"14px"}>
-                                BUY BEFORE NEXT STAGE PRICE INCREASE
-                            </Typography>
-                        </Box>
-                    </Box>
-                    <br />
-                    <Typography fontWeight={"bold"}>
-                        $USD RAISED: $1,543,819.69
-                    </Typography>
-                    <br />
-                    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                        <Box sx={{ width: "30%", height: "1px", backgroundColor: "white" }}></Box>
-                        1 $DICE = $0.0825
-                        <Box sx={{ width: "30%", height: "1px", backgroundColor: "white" }}></Box>
-                    </Box>
-                    <br />
-                    <br />
-                    <Box>
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            aria-label="icon position tabs example"
-                            variant="fullWidth"
-                        >
-                            <Tab
-                                icon={<img src="https://www.megadicetoken.com/_next/static/media/sol.ef9563a3.svg" alt="SOL" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
-                                label="SOL"
-                            />
-                            <Tab
-                                icon={<img src="https://www.megadicetoken.com/_next/static/media/eth.6808f1cc.svg" alt="ETH" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
-                                label="ETH"
-                            />
-                            <Tab
-                                icon={<img src="https://www.megadicetoken.com/_next/static/media/bsc.1ac4cd63.svg" alt="BSC" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
-                                label="BNB"
-                                onClick={handleModalOpen}
-                            />
-                        </Tabs>
-
-                        {/* Content for each tab */}
-                        {value === 0 && (
-                            <Box sx={{ p: 2 }}>
-                                <TextField
-                                    label="Buy with SOL"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                />
-                                <TextField
-                                    label="Receive $Dice"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                />
-                            </Box>
-                        )}
-                        {value === 1 && (
-                            <Box sx={{ p: 2 }}>
-                                <TextField
-                                    label="Buy with ETH"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                />
-                                <TextField
-                                    label="Receive $Dice"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                />
-                            </Box>
-                        )}
-                        {value === 2 && (
-                            <Box sx={{ p: 2 }}>
-                                <TextField
-                                    label="Buy with BNB"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                />
-                                <TextField
-                                    label="Receive $Dice"
-                                    variant="outlined"
-                                    fullWidth
-                                    margin="normal"
-                                />
-                            </Box>
-                        )}
-
-                        {/* Modal for BNB tab */}
-                        <Modal
-                            open={openModal}
-                            onClose={handleModalClose}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description"
-                        >
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    top: '50%',
-                                    left: '50%',
-                                    transform: 'translate(-50%, -50%)',
-                                    width: "40%",
-                                    bgcolor: 'background.paper',
-                                    boxShadow: 24,
-                                    p: 1,
-                                    height: "70vh"
-                                }}
-                            >
-                                <Typography id="modal-modal-title" variant="h6" component="h2" color="black">
-                                    Connect Wallet
-                                </Typography>
-                                <Box>
-
-                                    <Typography color="#B2B2B2">
-                                        Recommended
+                            <Box sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: 'wrap' }}>
+                                <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%", maxWidth: 'calc(25% - 20px)', margin: '10px' }}>
+                                    <Typography sx={{ color: "black" }}>
+                                        Days
                                     </Typography>
-                                    <Box
-                                        sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
-                                    >
-                                        <Tabs
-                                            orientation="vertical"
-                                            variant="scrollable"
-                                            value={valueTab}
-                                            onChange={handleChangeTab}
-                                            aria-label="Vertical tabs example"
-                                            sx={{ borderRight: 1, borderColor: 'divider' }}
-                                        >
-                                            <Tab label="Scan with MetaMask" {...a11yProps(0)} />
-                                            <Tab label="Item Two" {...a11yProps(1)} />
-                                            <Tab label="Item Three" {...a11yProps(2)} />
-                                            <Tab label="Item Four" {...a11yProps(3)} />
-                                        </Tabs>
-                                        <TabPanel value={valueTab} index={0}>
-                                            <Box>
-                                                <Typography>
-                                                    Scan with MetaMask
-                                                </Typography>
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
-                                            </Box>
-                                        </TabPanel>
-                                        <TabPanel value={valueTab} index={1}>
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
-                                        </TabPanel>
-                                        <TabPanel value={valueTab} index={2}>
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
-                                        </TabPanel>
-                                        <TabPanel value={valueTab} index={3}>
-                                            <Typography>
-                                                This tab doesn't require MetaMask.
-                                            </Typography>
-                                        </TabPanel>
-                                    </Box>
+                                    <Typography sx={{ color: "white", fontSize: "40px" }}>
+                                        2
+                                    </Typography>
                                 </Box>
-
+                                <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%", maxWidth: 'calc(25% - 20px)', margin: '10px' }}>
+                                    <Typography sx={{ color: "black" }}>
+                                        Hours
+                                    </Typography>
+                                    <Typography sx={{ color: "white", fontSize: "40px" }}>
+                                        2
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%", maxWidth: 'calc(25% - 20px)', margin: '10px' }}>
+                                    <Typography sx={{ color: "black" }}>
+                                        Minutes
+                                    </Typography>
+                                    <Typography sx={{ color: "white", fontSize: "40px" }}>
+                                        2
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ borderRadius: "10px", backgroundColor: "#0AC18E", textAlign: "center", minWidth: "20%", maxWidth: 'calc(25% - 20px)', margin: '10px' }}>
+                                    <Typography sx={{ color: "black" }}>
+                                        Seconds
+                                    </Typography>
+                                    <Typography sx={{ color: "white", fontSize: "40px" }}>
+                                        2
+                                    </Typography>
+                                </Box>
                             </Box>
-                        </Modal>
+                            <Box sx={{ backgroundColor: "white", padding: "4px 0", margin: '10px 0' }}>
+                                <Box sx={{ backgroundColor: "#0AC18E", width: "90%", margin: '0 auto', textAlign: 'center' }}>
+                                    <Typography fontSize={"14px"}>
+                                        BUY BEFORE NEXT STAGE PRICE INCREASE
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Typography fontWeight={"bold"} mb={2}>
+                                $USD RAISED: $1,543,819.69
+                            </Typography>
+                            <Typography variant="body2" mb={2}>
+                                1 $DICE = $0.0825
+                            </Typography>
+                            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: '10px' }}>
+                                <Box sx={{ width: "30%", height: "1px", backgroundColor: "white" }}></Box>
+                                1 $DICE = $0.0825
+                                <Box sx={{ width: "30%", height: "1px", backgroundColor: "white" }}></Box>
+                            </Box>
+                            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                <Tabs
+                                    value={value}
+                                    onChange={handleChange}
+                                    aria-label="icon position tabs example"
+                                    variant="fullWidth"
+                                >
+                                    <Tab
+                                        icon={<img src="https://www.megadicetoken.com/_next/static/media/sol.ef9563a3.svg" alt="SOL" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
+                                        label="SOL"
+                                    />
+                                    <Tab
+                                        icon={<img src="https://www.megadicetoken.com/_next/static/media/eth.6808f1cc.svg" alt="ETH" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
+                                        label="ETH"
+                                    />
+                                    <Tab
+                                        icon={<img src="https://www.megadicetoken.com/_next/static/media/bsc.1ac4cd63.svg" alt="BSC" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
+                                        label="BNB"
+                                        onClick={handleModalOpen}
+                                    />
+                                </Tabs>
+                            </Box>
 
+                            {/* Content for each tab */}
+                            {value === 0 && (
+                                <Box sx={{ p: 2 }}>
+                                    <TextField
+                                        label="Buy with SOL"
+                                        variant="outlined"
+                                        fullWidth
+                                        margin="normal"
+                                    />
+                                    <TextField
+                                        label="Receive $Dice"
+                                        variant="outlined"
+                                        fullWidth
+                                        margin="normal"
+                                    />
+                                </Box>
+                            )}
+                            {value === 1 && (
+                                <Box sx={{ p: 2 }}>
+                                    <TextField
+                                        label="Buy with ETH"
+                                        variant="outlined"
+                                        fullWidth
+                                        margin="normal"
+                                    />
+                                    <TextField
+                                        label="Receive $Dice"
+                                        variant="outlined"
+                                        fullWidth
+                                        margin="normal"
+                                    />
+                                </Box>
+                            )}
+                            {value === 2 && (
+                                <Box sx={{ p: 2 }}>
+                                    <TextField
+                                        label="Buy with BNB"
+                                        variant="outlined"
+                                        fullWidth
+                                        margin="normal"
+                                    />
+                                    <TextField
+                                        label="Receive $Dice"
+                                        variant="outlined"
+                                        fullWidth
+                                        margin="normal"
+                                    />
+                                </Box>
+                            )}
+
+                        </Box>
+
+                    </Grid>
+                </Grid>
+
+            </Box>
+            {/* Modal for BNB tab */}
+            <Modal
+                open={openModal}
+                onClose={handleModalClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: "40%",
+                        bgcolor: 'background.paper',
+                        boxShadow: 24,
+                        p: 1,
+                        height: "70vh"
+                    }}
+                >
+                    <Typography id="modal-modal-title" variant="h6" component="h2" color="black">
+                        Connect Wallet
+                    </Typography>
+                    <Box>
+
+                        <Typography color="#B2B2B2">
+                            Recommended
+                        </Typography>
+                        <Box
+                            sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
+                        >
+                            <Tabs
+                                orientation="vertical"
+                                variant="scrollable"
+                                value={valueTab}
+                                onChange={handleChangeTab}
+                                aria-label="Vertical tabs example"
+                                sx={{ borderRight: 1, borderColor: 'divider' }}
+                            >
+                                <Tab label="Scan with MetaMask" {...a11yProps(0)} />
+                                <Tab label="Item Two" {...a11yProps(1)} />
+                                <Tab label="Item Three" {...a11yProps(2)} />
+                                <Tab label="Item Four" {...a11yProps(3)} />
+                            </Tabs>
+                            <TabPanel value={valueTab} index={0}>
+                                <Box>
+                                    <Typography>
+                                        Scan with MetaMask
+                                    </Typography>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
+                                </Box>
+                            </TabPanel>
+                            <TabPanel value={valueTab} index={1}>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
+                            </TabPanel>
+                            <TabPanel value={valueTab} index={2}>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
+                            </TabPanel>
+                            <TabPanel value={valueTab} index={3}>
+                                <Typography>
+                                    This tab doesn't require MetaMask.
+                                </Typography>
+                            </TabPanel>
+                        </Box>
                     </Box>
 
-
                 </Box>
-            </Box>
+            </Modal>
 
 
             {/* <ResponsiveTabsSection /> */}
@@ -632,46 +621,46 @@ function Landingpage() {
 
             {/*  ------------------ recomm section ------------- */}
             <Box sx={{ my: 10, padding: "20px" }}>
-      <Grid container alignItems="center" spacing={2}>
-        <Grid item xs={12} sm={3}>
-          <Typography variant="h6" align="center">
-            Recommended By
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={1}>
-          <div style={{ height: "10vh", backgroundColor: "white", width: "2px", margin: "0 10px" }}>
-            {/* Divider */}
-          </div>
-        </Grid>
-        <Grid item xs={6} sm={2}>
-          <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
-            <img
-              src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fbitcoinist-logo.png&w=256&q=75"
-              alt="Bitcoinist"
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
-          </Box>
-        </Grid>
-        <Grid item xs={6} sm={2}>
-          <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
-            <img
-              src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fcryptonews-logo.png&w=256&q=75"
-              alt="Crypto News"
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
-          </Box>
-        </Grid>
-        <Grid item xs={6} sm={2}>
-          <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
-            <img
-              src="https://www.megadicetoken.com/assets/images/be-in-crypto-logo.svg"
-              alt="Be In Crypto"
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
-          </Box>
-        </Grid>
-      </Grid>
-    </Box>
+                <Grid container alignItems="center" spacing={2}>
+                    <Grid item xs={12} sm={3}>
+                        <Typography variant="h6" align="center">
+                            Recommended By
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={1}>
+                        <div style={{ height: "10vh", backgroundColor: "white", width: "2px", margin: "0 10px" }}>
+                            {/* Divider */}
+                        </div>
+                    </Grid>
+                    <Grid item xs={6} sm={2}>
+                        <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
+                            <img
+                                src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fbitcoinist-logo.png&w=256&q=75"
+                                alt="Bitcoinist"
+                                style={{ maxWidth: "100%", height: "auto" }}
+                            />
+                        </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={2}>
+                        <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
+                            <img
+                                src="https://www.megadicetoken.com/_next/image?url=%2Fassets%2Fimages%2Fcryptonews-logo.png&w=256&q=75"
+                                alt="Crypto News"
+                                style={{ maxWidth: "100%", height: "auto" }}
+                            />
+                        </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={2}>
+                        <Box display="flex" justifyContent="center" sx={{ my: 1, mx: 2 }}>
+                            <img
+                                src="https://www.megadicetoken.com/assets/images/be-in-crypto-logo.svg"
+                                alt="Be In Crypto"
+                                style={{ maxWidth: "100%", height: "auto" }}
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Box>
 
             {/* ------------ Air Drop Sec------------ */}
             <Box sx={{ padding: "20px" }}>
@@ -731,19 +720,19 @@ function Landingpage() {
                 </Box>
 
 
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', }}>
-                    <Box sx={{ width: '90%', marginBottom: '20px', }}>
-                        <Grid container >
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+                    <Box sx={{ width: '90%', marginBottom: '20px' }}>
+                        <Grid container spacing={2}>
                             {/* First card spanning 2 rows */}
-                            <Grid item xs={12} md={6} lg={6} >
+                            <Grid item xs={12} md={6} lg={6}>
                                 <Box sx={{
                                     border: "1px solid #0AC18E",
                                     backgroundColor: "#0E212F",
                                     borderRadius: "10px",
                                     padding: "30px",
                                     marginBottom: '10px',
-                                    height: '100vh',
-                                    width: "50%"
+                                    height: 'auto',
+                                    width: { md: "50%", xs: "100%" }
                                 }}>
                                     <Box sx={{ width: "150px", padding: "10px" }}>
                                         <img src="https://www.megadicetoken.com/assets/images/logo.svg" alt="" style={{ width: "100%", height: "auto" }} />
@@ -764,85 +753,53 @@ function Landingpage() {
                             </Grid>
 
                             {/* Second row with two cards */}
-                            <Grid item xs={12} md={6} >
+                            <Grid item xs={12} md={6}>
                                 <Grid container spacing={2}>
                                     {/* Second card */}
-                                    <Grid item xs={12} md={6}>
-                                        <Box sx={{
-                                            border: "1px solid #0AC18E",
-                                            backgroundColor: "#0E212F",
-                                            borderRadius: "10px",
-                                            padding: "30px",
-                                            marginBottom: '10px',
-                                            height: "50vh",
-                                            // width:"60%"
-                                        }}>
-                                            <Box>
-                                                <Typography color={"#0AC18E"}>{cardFeature[1].title}</Typography>
+                                    {cardFeature.slice(1, 3).map((card, index) => (
+                                        <Grid item xs={12} key={index}>
+                                            <Box sx={{
+                                                border: "1px solid #0AC18E",
+                                                backgroundColor: "#0E212F",
+                                                borderRadius: "10px",
+                                                padding: "30px",
+                                                marginBottom: '10px',
+                                                height: "auto",
+                                                width: { md: "50%", xs: "100%" }
+                                            }}>
+                                                <Box>
+                                                    <Typography color={"#0AC18E"}>{card.title}</Typography>
+                                                </Box>
+                                                <Box>
+                                                    <Typography>{card.desc}</Typography>
+                                                </Box>
                                             </Box>
-                                            <Box>
-                                                <Typography>{cardFeature[1].desc}</Typography>
+                                        </Grid>
+                                    ))}
+                                    {/* Remaining cards in the third row */}
+                                    {cardFeature.slice(3, 5).map((card, index) => (
+                                        <Grid item xs={12} md={6} key={index}>
+                                            <Box sx={{
+                                                border: "1px solid #0AC18E",
+                                                backgroundColor: "#0E212F",
+                                                borderRadius: "10px",
+                                                padding: "30px",
+                                                marginBottom: '10px',
+                                                height: "auto",
+                                                width: { md: "50%", xs: "100%" }
+                                            }}>
+                                                <Box>
+                                                    <Typography color={"#0AC18E"}>{card.title}</Typography>
+                                                </Box>
+                                                <Box>
+                                                    <Typography>{card.desc}</Typography>
+                                                </Box>
                                             </Box>
-                                        </Box>
-                                    </Grid>
-                                    {/* Third card */}
-                                    <Grid item xs={12} md={6}>
-                                        <Box sx={{
-                                            border: "1px solid #0AC18E",
-                                            backgroundColor: "#0E212F",
-                                            borderRadius: "10px",
-                                            padding: "30px",
-                                            marginBottom: '10px',
-                                            height: "50vh"
-
-                                        }}>
-                                            <Box>
-                                                <Typography color={"#0AC18E"}>{cardFeature[2].title}</Typography>
-                                            </Box>
-                                            <Box>
-                                                <Typography>{cardFeature[2].desc}</Typography>
-                                            </Box>
-                                        </Box>
-                                    </Grid>
-                                    {/* Fourth card */}
-                                    <Grid item xs={12} md={6}>
-                                        <Box sx={{
-                                            border: "1px solid #0AC18E",
-                                            backgroundColor: "#0E212F",
-                                            borderRadius: "10px",
-                                            padding: "30px",
-                                            marginBottom: '10px',
-                                            height: "50vh"
-                                        }}>
-                                            <Box>
-                                                <Typography color={"#0AC18E"}>{cardFeature[3].title}</Typography>
-                                            </Box>
-                                            <Box>
-                                                <Typography>{cardFeature[3].desc}</Typography>
-                                            </Box>
-                                        </Box>
-                                    </Grid>
-                                    {/* Fifth card */}
-                                    <Grid item xs={12} md={6}>
-                                        <Box sx={{
-                                            border: "1px solid #0AC18E",
-                                            backgroundColor: "#0E212F",
-                                            borderRadius: "10px",
-                                            padding: "30px",
-                                            marginBottom: '10px',
-                                            height: "50vh"
-
-                                        }}>
-                                            <Box>
-                                                <Typography color={"#0AC18E"}>{cardFeature[4].title}</Typography>
-                                            </Box>
-                                            <Box>
-                                                <Typography>{cardFeature[4].desc}</Typography>
-                                            </Box>
-                                        </Box>
-                                    </Grid>
+                                        </Grid>
+                                    ))}
                                 </Grid>
                             </Grid>
+
 
                         </Grid>
                     </Box>
@@ -941,7 +898,7 @@ function Landingpage() {
                         <img src="https://www.megadicetoken.com/assets/images/tokenomics-chart.svg" alt="Tokenomics Chart" style={{ width: "100%", height: "auto", borderRadius: "10px" }} />
                     </Box>
 
-                    <Box sx={{ width: { xs: "100%", md: "45%" }, backgroundColor: "#0E212F", padding: { xs: "20px", md: "30px" }, borderRadius: "10px",     }}>
+                    <Box sx={{ width: { xs: "100%", md: "45%" }, backgroundColor: "#0E212F", padding: { xs: "20px", md: "30px" }, borderRadius: "10px", }}>
                         <Typography sx={{ fontSize: { xs: "18px", md: "24px" }, color: "#ffffff" }} mb={2}>
                             $DICE has total supply of 420,000,000
                         </Typography>
