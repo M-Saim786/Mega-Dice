@@ -1,5 +1,5 @@
-import { Box, Grid, List, ListItem, useMediaQuery, useTheme } from '@mui/material';
-import React from 'react';
+import { Box, Grid, List, ListItem, TextField, useMediaQuery, useTheme } from '@mui/material';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -19,6 +19,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import Button from '@mui/material/Button';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Modal from '@mui/material/Modal';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
@@ -183,6 +184,18 @@ function Landingpage() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    const [openModal, setOpenModal] = React.useState(false);
+
+
+    const handleModalOpen = () => {
+        setOpenModal(true);
+    };
+
+    const handleModalClose = () => {
+        setOpenModal(false);
+    };
+
+
 
     return (
         <Box>
@@ -328,13 +341,104 @@ function Landingpage() {
                             value={value}
                             onChange={handleChange}
                             aria-label="icon position tabs example"
+                            variant="fullWidth"
                         >
-                            {/* <Tab icon={<PhoneIcon />} label="top" /> */}
-                            <Tab icon={<PhoneMissedIcon />} iconPosition="start" label="start" />
+                            <Tab
+                                icon={<img src="https://www.megadicetoken.com/_next/static/media/sol.ef9563a3.svg" alt="SOL" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
+                                label="SOL"
+                            />
+                            <Tab
+                                icon={<img src="https://www.megadicetoken.com/_next/static/media/eth.6808f1cc.svg" alt="ETH" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
+                                label="ETH"
+                            />
+                            <Tab
+                                icon={<img src="https://www.megadicetoken.com/_next/static/media/bsc.1ac4cd63.svg" alt="BSC" style={{ width: "20px", height: "20px", marginRight: "5px" }} />}
+                                label="BNB"
+                                onClick={handleModalOpen}
+                            />
                         </Tabs>
+
+                        {/* Content for each tab */}
+                        {value === 0 && (
+                            <Box sx={{ p: 2 }}>
+                                <TextField
+                                    label="Buy with SOL"
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                />
+                                <TextField
+                                    label="Receive $Dice"
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                />
+                            </Box>
+                        )}
+                        {value === 1 && (
+                            <Box sx={{ p: 2 }}>
+                                <TextField
+                                    label="Buy with ETH"
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                />
+                                <TextField
+                                    label="Receive $Dice"
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                />
+                            </Box>
+                        )}
+                        {value === 2 && (
+                            <Box sx={{ p: 2 }}>
+                                <TextField
+                                    label="Buy with BNB"
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                />
+                                <TextField
+                                    label="Receive $Dice"
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                />
+                            </Box>
+                        )}
+
+                        {/* Modal for BNB tab */}
+                        <Modal
+                            open={openModal}
+                            onClose={handleModalClose}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <Box
+                                sx={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    width: 400,
+                                    bgcolor: 'background.paper',
+                                    boxShadow: 24,
+                                    p: 4,
+                                }}
+                            >
+                                <Typography id="modal-modal-title" variant="h6" component="h2">
+                                    Modal for BNB Tab
+                                </Typography>
+                                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                    Additional content or form fields can be added here.
+                                </Typography>
+                                <Button onClick={handleModalClose} variant="contained" sx={{ mt: 2 }}>
+                                    Close Modal
+                                </Button>
+                            </Box>
+                        </Modal>
                     </Box>
-
-
 
 
                 </Box>
