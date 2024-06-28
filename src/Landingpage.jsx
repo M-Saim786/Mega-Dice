@@ -11,6 +11,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import SendIcon from '@mui/icons-material/Send';
 import FAQS from './FAQS';
 
+import PropTypes from 'prop-types';
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -19,11 +20,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import Button from '@mui/material/Button';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+// import TabPanel from '@mui/material/TabPanel';
 import Modal from '@mui/material/Modal';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 import PhoneMissedIcon from '@mui/icons-material/PhoneMissed';
+import ResponsiveTabsSection from './TabsSection';
 
 
 const cards = [
@@ -98,40 +101,50 @@ const tokenomics = [
     {
         fund: "Presale",
         allocation: "35%",
-        token: "147,000,000"
+        token: "147,000,000",
+        color: "#06946C"
     },
     {
         fund: "Airdrops for players",
         allocation: "15%",
-        token: "63,000,000"
-    },
+        token: "63,000,000",
+        color: "#0AC18E"
 
+    },
     {
         fund: "LP",
         allocation: "15%",
-        token: "63,000,000"
+        token: "63,000,000",
+        color: "#0EEBAD"
     },
     {
         fund: "Casino $DICE pool",
         allocation: "15%",
-        token: "63,000,000"
+        token: "63,000,000",
+        color: "#65F6CD"
+
     },
 
     {
         fund: "Staking rewards",
         allocation: "10%",
-        token: "42,000,000"
+        token: "42,000,000",
+        color: "#B3F9E6"
     },
     {
         fund: "Marketing/KOL deals",
         allocation: "5%",
-        token: "21,000,000"
+        token: "21,000,000",
+        color: "#B3F9E6"
+
     },
 
     {
         fund: "Affiliates",
         allocation: "5%",
-        token: "21,000,000"
+        token: "21,000,000",
+        color: "#D9FCF2"
+
     },
 
 
@@ -174,6 +187,41 @@ const faqs = [
 ]
 
 
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+    console.log(index)
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`vertical-tabpanel-${index}`}
+            aria-labelledby={`vertical-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
+
+
+function a11yProps(index) {
+    return {
+        id: `vertical-tab-${index}`,
+        'aria-controls': `vertical-tabpanel-${index}`,
+    };
+}
+
 function Landingpage() {
     const theme = useTheme();
     const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
@@ -193,6 +241,13 @@ function Landingpage() {
 
     const handleModalClose = () => {
         setOpenModal(false);
+    };
+
+
+    const [valueTab, setValueTab] = React.useState(0);
+
+    const handleChangeTab = (event, newValue) => {
+        setValueTab(newValue);
     };
 
 
@@ -421,28 +476,72 @@ function Landingpage() {
                                     top: '50%',
                                     left: '50%',
                                     transform: 'translate(-50%, -50%)',
-                                    width: 400,
+                                    width: "40%",
                                     bgcolor: 'background.paper',
                                     boxShadow: 24,
-                                    p: 4,
+                                    p: 1,
+                                    height: "70vh"
                                 }}
                             >
-                                <Typography id="modal-modal-title" variant="h6" component="h2">
-                                    Modal for BNB Tab
+                                <Typography id="modal-modal-title" variant="h6" component="h2" color="black">
+                                    Connect Wallet
                                 </Typography>
-                                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                    Additional content or form fields can be added here.
-                                </Typography>
-                                <Button onClick={handleModalClose} variant="contained" sx={{ mt: 2 }}>
-                                    Close Modal
-                                </Button>
+                                <Box>
+
+                                    <Typography color="#B2B2B2">
+                                        Recommended
+                                    </Typography>
+                                    <Box
+                                        sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
+                                    >
+                                        <Tabs
+                                            orientation="vertical"
+                                            variant="scrollable"
+                                            value={valueTab}
+                                            onChange={handleChangeTab}
+                                            aria-label="Vertical tabs example"
+                                            sx={{ borderRight: 1, borderColor: 'divider' }}
+                                        >
+                                            <Tab label="Scan with MetaMask" {...a11yProps(0)} />
+                                            <Tab label="Item Two" {...a11yProps(1)} />
+                                            <Tab label="Item Three" {...a11yProps(2)} />
+                                            <Tab label="Item Four" {...a11yProps(3)} />
+                                        </Tabs>
+                                        <TabPanel value={valueTab} index={0}>
+                                            <Box>
+                                                <Typography>
+                                                    Scan with MetaMask
+                                                </Typography>
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
+                                            </Box>
+                                        </TabPanel>
+                                        <TabPanel value={valueTab} index={1}>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
+                                        </TabPanel>
+                                        <TabPanel value={valueTab} index={2}>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Qehbc6rhmKbnnjGzzGDsE561DKTT7KLD6CqXBJC1hBWx2o-Csme9GIR84d5mCnNuVPE&usqp=CAU" alt="" />
+                                        </TabPanel>
+                                        <TabPanel value={valueTab} index={3}>
+                                            <Typography>
+                                                This tab doesn't require MetaMask.
+                                            </Typography>
+                                        </TabPanel>
+                                    </Box>
+                                </Box>
+
                             </Box>
                         </Modal>
+
                     </Box>
 
 
                 </Box>
             </Box>
+
+
+            {/* <ResponsiveTabsSection /> */}
+
+
 
 
             <Box sx={{ padding: "20px" }}>
@@ -565,10 +664,10 @@ function Landingpage() {
             {/* ------------ Air Drop Sec------------ */}
             <Box sx={{ padding: "20px" }}>
                 <Box sx={{ textAlign: "center", mb: 4 }}>
-                    <Typography variant="h3" fontSize={{ xs: "40px", sm: "60px" }}>
+                    <Typography variant="h3" fontWeight={"bold"} fontSize={{ xs: "40px", sm: "60px" }}>
                         AIRDROP <TransparentText text="FOR" /> CASINO <TransparentText text="players" />
                     </Typography>
-                    <Typography variant="h5" fontSize={{ xs: "24px", sm: "30px" }} mt={2}>
+                    <Typography variant="h5" fontSize={{ xs: "24px", sm: "30px", lg: "40px" }} mt={2} fontWeight={"bold"} >
                         $2,250,000+ USD airdrop
                     </Typography>
                 </Box>
@@ -820,7 +919,7 @@ function Landingpage() {
 
             <Box sx={{ padding: { xs: "20px", md: "30px" }, my: { xs: 2, md: 4 }, mb: { xs: 6, md: 10 } }}>
                 <Box>
-                    <Typography variant="h2" fontSize={{ xs: "40px", md: "60px" }} textAlign="center">
+                    <Typography variant="h2" fontSize={{ xs: "40px", md: "60px" }} textAlign="center" marginBottom={"30px"}>
                         <TransparentText text="OUR" /> TOKENOMICS
                     </Typography>
                 </Box>
@@ -830,7 +929,7 @@ function Landingpage() {
                         <img src="https://www.megadicetoken.com/assets/images/tokenomics-chart.svg" alt="Tokenomics Chart" style={{ width: "100%", height: "auto", borderRadius: "10px" }} />
                     </Box>
 
-                    <Box sx={{ width: { xs: "100%", md: "45%" }, backgroundColor: "#0E212F", padding: { xs: "20px", md: "30px" }, borderRadius: "10px" }}>
+                    <Box sx={{ width: { xs: "100%", md: "45%" }, backgroundColor: "#0E212F", padding: { xs: "20px", md: "30px" }, borderRadius: "10px",     }}>
                         <Typography sx={{ fontSize: { xs: "18px", md: "24px" }, color: "#ffffff" }} mb={2}>
                             $DICE has total supply of 420,000,000
                         </Typography>
@@ -848,13 +947,17 @@ function Landingpage() {
                                 </thead>
                                 <tbody style={{ marginTop: "10px" }}>
                                     {tokenomics.map((token, index) => (
-                                        <tr key={index} style={{ backgroundColor: "#091620", margin: "10px" }}>
-                                            <td style={{ padding: "10px", fontSize: { xs: "14px", md: "16px" }, color: "#ffffff" }}>{token.fund}</td>
-                                            <td style={{ padding: "10px", fontSize: { xs: "14px", md: "16px" }, color: "#ffffff" }}>{token.allocation}</td>
-                                            <td style={{ padding: "10px", fontSize: { xs: "14px", md: "16px" }, color: "#ffffff" }}>{token.token}</td>
+                                        <tr key={index} className="table-row">
+                                            <td className="table-cell table-cell-fund">
+                                                <span className="circle" style={{ backgroundColor: token.color }}></span>
+                                                {token.fund}
+                                            </td>
+                                            <td className="table-cell">{token.allocation}</td>
+                                            <td className="table-cell">{token.token}</td>
                                         </tr>
                                     ))}
                                 </tbody>
+
                             </table>
                         </Box>
                     </Box>
@@ -917,6 +1020,100 @@ function Landingpage() {
                     </Box>
                 </Box>
             </Box>
+
+            {/* ---------------- road map section ------------ */}
+            <Box sx={{ padding: "30px" }}>
+                <Box>
+                    <Typography fontSize={"60px"} textAlign={"center"}>
+                        <TransparentText text="Our" />
+                        ROADMAP
+                    </Typography>
+                    <Typography textAlign={"center"}>
+                        Enjoy early benefits as we embark on our roadmap to make $DICE the leading GameFi token on Solana, seamlessly integrated with Mega Dice casino.
+                    </Typography>
+                </Box>
+                <Box sx={{ display: "flex", justifyContent: "center", padding: "20px" }}>
+                    <Box width="18%" border="" sx={{ display: { xs: 'none', md: 'block' } }}>
+                        <Box sx={{ my: 7, }}>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1 }}>
+                                Presale Token Claiming
+                            </Typography>
+                            <Typography color="#979797">
+                                To ensure a fair launch for Mega Dice, presale buyers will be able to claim their tokens from the website at the same time as the DEX listing.
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1 }}>
+                                Early Staking Incentive
+                            </Typography>
+                            <Typography color="#979797">
+                                Presale buyers of Mega Dice will be able to stake their tokens into the smart contract before listing day to benefit from the high early rewards opportunity.
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        {/* Responsive image */}
+                        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+                            <img
+                                src="https://www.megadicetoken.com/_next/static/media/roadmap-mobile.444ef21b.svg"
+                                alt=""
+                                style={{ width: "100%" }}
+                            />
+                        </Box>
+                        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                            <img
+                                src="https://www.megadicetoken.com/_next/static/media/roadmap-desktop.633c0b46.svg"
+                                alt=""
+                                style={{ width: "64%" }}
+                            />
+                        </Box>
+                    </Box>
+                    <Box sx={{ width: { xs: '55%', md: '18%' }, }}>
+                        <Box sx={{ my: 3, display: { xs: 'block', md: 'none' } }}>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1 }}>
+                                Presale Token Claiming
+                            </Typography>
+                            <Typography color="#979797">
+                                To ensure a fair launch for Mega Dice, presale buyers will be able to claim their tokens from the website at the same time as the DEX listing.
+                            </Typography>
+                        </Box>
+                        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1, display: { xs: 'block', md: 'none' } }}>
+                                Early Staking Incentive
+                            </Typography>
+                            <Typography color="#979797">
+                                Presale buyers of Mega Dice will be able to stake their tokens into the smart contract before listing day to benefit from the high early rewards opportunity.
+                            </Typography>
+                        </Box>
+                        <Box sx={{ my: 4 }}>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1 }}>
+                                Presale and Marketing
+                            </Typography>
+                            <Typography color="#979797">
+                                Mega Dice starts on a level playing field with a fair presale. The team will allocate a portion of funds raised towards a professional marketing strategy.
+                            </Typography>
+                        </Box>
+                        <Box sx={{ my: 4 }}>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1 }}>
+                                Allocated Liquidity Provision
+                            </Typography>
+                            <Typography color="#979797">
+                                The Mega Dice team will add a substantial liquidity pool. For this purpose, 10% of the total token supply has been set aside.
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography fontWeight={"bold"} sx={{ mb: 1 }}>
+                                DEX Launch
+                            </Typography>
+                            <Typography color="#979797">
+                                Mega Dice will launch on DEX. This will provide the best trading environment and early liquidity.
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
+
+
 
             {/* -------------- faqs ----------------- */}
             <Box sx={{ padding: "30px" }}>

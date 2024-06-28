@@ -49,3 +49,43 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+/* styles.css */
+.table-row {
+  margin: 10px 0; /* Only top and bottom margin needed for spacing */
+  /* border: 1px solid red; */
+  border-radius: 5px;
+  background-color: #091620;
+}
+
+.table-cell {
+  padding: 10px;
+  color: #ffffff;
+}
+
+.table-cell-fund {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* background-color: green; */
+  margin-right: 10px;
+}
+
+
+@media (max-width: 600px) {
+  .table-cell {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) {
+  .table-cell {
+    font-size: 16px;
+  }
+}
